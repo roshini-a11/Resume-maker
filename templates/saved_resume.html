@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Saved Resumes</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="saved-container">
+
+        <h1>Saved Resumes</h1>
+
+        <p class="saved-text">
+            Your saved resume details are shown below.
+        </p>
+
+
+        <!-- Check whether resumes are available -->
+
+        {% if resumes %}
+
+
+            <!-- Display all saved resumes -->
+
+            {% for resume in resumes %}
+
+            <div class="resume-card">
+
+                <h2>
+                    {{ resume.name }}
+                </h2>
+
+               <p>
+               <strong>Skills:</strong>
+               {{ resume.skills }}
+               </p>
+
+               <p>
+               <strong>Experience:</strong>
+               {{ resume.experience }}
+               </p>
+
+               <p>
+               <strong>Projects:</strong>
+               {{ resume.projects }}
+                </p>
+                
+                <a href="{{ url_for('edit_resume',
+                    resume_id=resume.id) }}"
+                    class="edit-button">
+
+                    Edit Resume
+
+                </a>
+
+                <!-- Delete Resume Button -->
+
+                <a href="{{ url_for('delete_resume',
+                                    resume_id=resume.id) }}"
+                   class="delete-button">
+
+                    Delete Resume
+
+                </a>
+
+            </div>
+
+            {% endfor %}
+
+
+        <!-- If there are no saved resumes -->
+
+        {% else %}
+
+            <div class="no-resume">
+
+                <h2>No Resumes Found</h2>
+
+                <p>
+                    You have not saved any resumes yet.
+                </p>
+
+                <a href="{{ url_for('home') }}"
+                   class="create-button">
+
+                    Create New Resume
+
+                </a>
+
+            </div>
+
+        {% endif %}
+
+
+        <!-- This button is after endif -->
+
+        <a href="{{ url_for('dashboard') }}"
+           class="back-button">
+
+            ← Back to Dashboard
+
+        </a>
+
+    </div>
+
+</body>
+
+</html>

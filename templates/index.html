@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>AI Resume Maker</title>
+</head>
+<body>
+    <h2>Resume Generator</h2>
+
+    <form action="/generate" method="POST">
+        <input type="text" name="name" placeholder="Name"><br><br>
+        <input type="text" name="skills" placeholder="Skills"><br><br>
+        <textarea name="experience" placeholder="Experience"></textarea><br><br>
+        <button type="submit">Generate Resume</button>
+    </form>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>ATS Resume Checker</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="ats-container">
+
+    <h1>ATS Resume Checker</h1>
+
+    <p class="ats-subtitle">
+        Compare your resume skills with the job-required skills.
+    </p>
+
+
+    <form method="POST"
+          action="{{ url_for('ats') }}">
+
+
+        <!-- RESUME SKILLS -->
+
+        <div class="ats-input-group">
+
+            <label for="resume_skills">
+
+                Resume Skills
+
+            </label>
+
+            <textarea
+                id="resume_skills"
+                name="resume_skills"
+                placeholder="Example: Python, Java, HTML, CSS"
+                required
+            ></textarea>
+
+            <small>
+                Enter each skill separated by a comma.
+            </small>
+
+        </div>
+
+
+        <!-- JOB REQUIRED SKILLS -->
+
+        <div class="ats-input-group">
+
+            <label for="job_skills">
+
+                Job Required Skills
+
+            </label>
+
+            <textarea
+                id="job_skills"
+                name="job_skills"
+                placeholder="Example: Python, Java, SQL"
+                required
+            ></textarea>
+
+            <small>
+                Enter each skill separated by a comma.
+            </small>
+
+        </div>
+
+
+        <!-- BUTTONS -->
+
+        <div class="ats-form-buttons">
+
+            <a href="{{ url_for('dashboard') }}"
+               class="ats-back-button">
+
+                ← Back to Dashboard
+
+            </a>
+
+
+            <button type="submit"
+                    class="ats-check-button">
+
+                Check ATS Score
+
+            </button>
+
+        </div>
+
+    </form>
+
+</div>
+
+</body>
+
+</html>

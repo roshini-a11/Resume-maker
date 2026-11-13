@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Resume Maker Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <h1>AI Resume Maker</h1>
+
+        <p class="welcome-text">
+            Welcome! Choose an option below.
+        </p>
+
+        <!-- All four buttons are inside this grid -->
+
+        <div class="button-grid">
+
+            <a href="{{ url_for('resume') }}" class="dashboard-button">
+                Create Resume
+            </a>
+
+            <a href="{{ url_for('ats') }}"
+                class="dashboard-button">
+
+                ATS Checker
+
+            </a>
+
+            <a href="/coverletter" class="dashboard-button">
+                Generate Cover Letter
+            </a>
+
+            <a href="/saved" class="dashboard-button">
+                Saved Resumes
+            </a>
+
+        </div>
+
+        <!-- Logout is outside the grid -->
+
+        <a href="/logout" class="logout-button">
+            Logout
+        </a>
+
+    </div>
+
+</body>
+
+</html>

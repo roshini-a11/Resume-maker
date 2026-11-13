@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Cover Letter Generator</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="form-container">
+
+    <h1>Cover Letter Generator</h1>
+
+    <p class="form-subtitle">
+        Enter your details to generate a cover letter.
+    </p>
+
+    <form method="POST"
+          action="{{ url_for('coverletter') }}">
+
+        <div class="input-group">
+
+            <label>Your Name</label>
+
+            <input
+                type="text"
+                name="name"
+                placeholder="Enter your name"
+                required>
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label>Job Role</label>
+
+            <input
+                type="text"
+                name="job_role"
+                placeholder="Example: Python Developer"
+                required>
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label>Company Name</label>
+
+            <input
+                type="text"
+                name="company"
+                placeholder="Enter company name"
+                required>
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label>Your Skills</label>
+
+            <textarea
+                name="skills"
+                placeholder="Example: Python, Java, HTML, CSS"
+                required
+            ></textarea>
+
+        </div>
+
+
+        <div class="form-buttons">
+
+            <a href="{{ url_for('dashboard') }}"
+               class="form-back-button">
+
+                ← Back
+
+            </a>
+
+
+            <button type="submit"
+                    class="generate-button">
+
+                Generate Cover Letter
+
+            </button>
+
+        </div>
+
+    </form>
+
+</div>
+
+</body>
+
+</html>

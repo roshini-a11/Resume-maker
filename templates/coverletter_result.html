@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Generated Cover Letter</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="resume-page">
+
+    <h1>Cover Letter</h1>
+
+    <br>
+
+    <p>Dear Hiring Manager,</p>
+
+    <p>
+        I am {{ name }}, and I am interested in the
+        {{ job_role }} position at {{ company }}.
+    </p>
+
+    <p>
+        I have knowledge and skills in
+        {{ skills }}.
+        I am eager to apply my abilities, learn new technologies,
+        and contribute to your organization.
+    </p>
+
+    <p>
+        I believe my skills and willingness to learn make me
+        a suitable candidate for this position.
+    </p>
+
+    <p>
+        Thank you for considering my application.
+        I look forward to the opportunity to discuss my
+        qualifications with you.
+    </p>
+
+    <br>
+
+    <p>Sincerely,</p>
+
+    <p><strong>{{ name }}</strong></p>
+
+
+    <div class="resume-buttons">
+
+        <a href="{{ url_for('coverletter') }}"
+           class="edit-button">
+
+            Edit Details
+
+        </a>
+
+        <a href="{{ url_for('dashboard') }}"
+           class="back-button">
+
+            Back to Dashboard
+
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

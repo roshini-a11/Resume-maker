@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Edit Resume</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="edit-container">
+
+        <h1>Edit Resume</h1>
+
+        <p>
+            Update your resume details below.
+        </p>
+
+        <form method="POST">
+
+            <label>Name</label>
+
+            <input
+                type="text"
+                name="name"
+                value="{{ resume.name }}"
+                required
+            >
+
+
+            <label>Skills</label>
+
+            <input
+                type="text"
+                name="skills"
+                value="{{ resume.skills }}"
+                required
+            >
+
+
+            <label>Experience</label>
+
+            <textarea
+                name="experience"
+                required
+            >{{ resume.experience }}</textarea>
+
+
+            <!-- Projects -->
+
+            <label>Projects</label>
+
+            <textarea
+                name="projects"
+                placeholder="Enter your project details"
+>           {{ resume.projects }}</textarea>
+
+            <button type="submit">
+
+                Save Changes
+
+            </button>
+
+        </form>
+
+
+        <a href="{{ url_for('saved_resume') }}"
+           class="back-button">
+
+            ← Back to Saved Resumes
+
+        </a>
+
+    </div>
+
+</body>
+
+</html>
